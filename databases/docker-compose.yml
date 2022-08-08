@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+ database0:
+   image: jgiannuzzi/postgres-bdr
+   restart: always
+   ports:
+     - 54325:5432
+   volumes:
+     - /data/postgres0:/var/lib/postgresql/data
+   environment:
+     POSTGRES_HOST: localhost
+     POSTGRES_USER: postgres
+     POSTGRES_PASSWORD: 123
+ database1:
+   image: jgiannuzzi/postgres-bdr
+   restart: always
+   ports:
+     - 54326:5432
+   volumes:
+     - /data/postgres1:/var/lib/postgresql/data
+   environment:
+     POSTGRES_HOST: localhost
+     POSTGRES_USER: postgres
+     POSTGRES_PASSWORD: 123
